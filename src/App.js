@@ -11,10 +11,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div>
-          <span>{user && `Hello, ${user.email}`}</span>
+        <h1>Bulletin Board</h1>
+        <span>
+          {user && `Hello, ${user.email} `}
           {user && <button onClick={handleLogout}>Sign Out</button>}
-        </div>
+        </span>
       </header>
       <main>
         <Switch>
