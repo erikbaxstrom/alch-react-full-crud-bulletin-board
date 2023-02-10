@@ -1,6 +1,7 @@
 import { Redirect } from 'react-router-dom';
 import { useUser } from '../../context/UserContext.js';
 import { usePosts } from '../../hooks/usePosts.js';
+import PostCard from './PostCard/PostCard.js';
 
 export default function Posts() {
   const { user } = useUser();
@@ -12,9 +13,12 @@ export default function Posts() {
   return (
     <>
       <h1>Posts</h1>
-      {console.log('Posts.js posts:', posts)}
+
       {posts.map((post) => {
-        console.log(post);
+        {
+          console.log('woo');
+        }
+        <PostCard key={post.id} />;
       })}
     </>
   );

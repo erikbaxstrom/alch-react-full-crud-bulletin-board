@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-// import { getPosts } from '../services/posts.js';
+import { getPosts } from '../services/posts.js';
 
 export function usePosts() {
   const [posts, setPosts] = useState([]);
@@ -8,12 +8,12 @@ export function usePosts() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const data = await getPosts();
-        const data = ['post 1', 'ppost 2', 'post3'];
+        const data = await getPosts();
+        // const data = ['post 1', 'ppost 2', 'post3'];
         setPosts(data);
       } catch (e) {
         setError(e.message);
-        console.log('erroring out', e.message);
+        console.error(e.message);
       }
     };
     fetchData();
