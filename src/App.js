@@ -19,11 +19,11 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route path="/auth/:loginType" component={Auth} />
-          <Route path="/" component={Posts} />
-          <Route path="/Posts">
+          <Route exact path="/auth/:loginType" component={Auth} />
+          <Route exact path="/" component={Posts} />
+          <Route exact path="/posts">
             <>
-              {user && <Redirect to="/Posts" />}
+              {user && <Redirect to="/posts" />}
               {!user && <Redirect to="/auth/sign-in" />}
             </>
           </Route>

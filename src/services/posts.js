@@ -6,6 +6,6 @@ export async function getPosts() {
     .select('*')
     .limit('50')
     .order('created_at', { ascending: false });
-  console.log(response.data);
+  //   console.log(response.data);
   return response.data;
 }

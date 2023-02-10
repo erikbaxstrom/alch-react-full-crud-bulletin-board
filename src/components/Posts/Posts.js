@@ -14,12 +14,9 @@ export default function Posts() {
     <>
       <h1>Posts</h1>
 
-      {posts.map((post) => {
-        {
-          console.log('woo');
-        }
-        <PostCard key={post.id} />;
-      })}
+      {posts.map((post) => (
+        <PostCard key={post.id} {...post} />
+      ))}
     </>
   );
 }

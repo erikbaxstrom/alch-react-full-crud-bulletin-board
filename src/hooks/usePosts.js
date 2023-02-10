@@ -9,7 +9,6 @@ export function usePosts() {
     const fetchData = async () => {
       try {
         const data = await getPosts();
-        // const data = ['post 1', 'ppost 2', 'post3'];
         setPosts(data);
       } catch (e) {
         setError(e.message);

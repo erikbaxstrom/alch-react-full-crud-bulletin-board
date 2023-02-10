@@ -1,4 +1,9 @@
-export default function PostCard() {
-  console.log('did something!!!!');
-  return <h3>post!</h3>;
+export default function PostCard({ title, description }) {
+  // console.log('postcard', title, description);
+  return (
+    <div className="postCard">
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
 }
