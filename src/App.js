@@ -1,7 +1,8 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
 import { useUser } from './context/UserContext.js';
-import main from './components/Main/Main.js';
+import Posts from './components/Posts/Posts.js';
+import EditPost from './components/EditPost/EditPost.js';
 
 import './App.css';
 
@@ -11,18 +12,20 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div>
-          <span>{user && `Hello, ${user.email}`}</span>
+        <h1>Bulletin Board</h1>
+        <span>
+          {user && `Hello, ${user.email} `}
           {user && <button onClick={handleLogout}>Sign Out</button>}
-        </div>
+        </span>
       </header>
       <main>
         <Switch>
-          <Route path="/auth/:loginType" component={Auth} />
-          <Route path="/" component={main} />
-          <Route path="/main">
+          <Route exact path="/auth/:loginType" component={Auth} />
+          <Route exact path="/edit-post/:id" component={EditPost} />
+          <Route exact path="/" component={Posts} />
+          <Route exact path="/posts">
             <>
-              {user && <Redirect to="/main" />}
+              {user && <Redirect to="/posts" />}
               {!user && <Redirect to="/auth/sign-in" />}
             </>
           </Route>

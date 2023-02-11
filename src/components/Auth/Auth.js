@@ -10,7 +10,7 @@ export default function Auth() {
   const { submitAuthHandler, user } = useUser();
 
   if (user) {
-    return <Redirect to="/main" />;
+    return <Redirect to="/posts" />;
   }
   return (
     <>
