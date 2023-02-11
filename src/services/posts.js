@@ -9,3 +9,9 @@ export async function getPosts() {
   //   console.log(response.data);
   return response.data;
 }
+
+export async function getPost(id) {
+  const response = await client.from('posts').select('*').match({ id }).single();
+  // console.log('db got back:', response);
+  return response.data;
+}
